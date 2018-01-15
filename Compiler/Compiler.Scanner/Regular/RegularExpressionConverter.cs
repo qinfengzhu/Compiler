@@ -16,6 +16,7 @@ namespace Compiler.Scanner.Regular
             }
             return expression.Accept(this);
         }
+        public abstract T ConvertAlternation(AlternationExpression exp);
         public abstract T ConvertSymbol(SymbolExpression exp);
         public abstract T ConvertEmpty(EmptyExpression exp);
         public abstract T ConvertConcatenation(ConcatenationExpression exp);

@@ -33,7 +33,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Compiler.Public.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Key\Compiler.Public.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>true</DelaySign>
@@ -49,21 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Compiler.Common\CodeContract.cs">
+      <Link>CodeContract.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regular\AlternationCharSetExpression.cs" />
+    <Compile Include="Regular\AlternationExpression.cs" />
+    <Compile Include="Regular\ConcatenationExpression.cs" />
+    <Compile Include="Regular\EmptyExpression.cs" />
     <Compile Include="Regular\KleeneStarExpression.cs" />
     <Compile Include="Regular\RegularExpression.cs" />
     <Compile Include="Regular\RegularExpressionConverter.cs" />
     <Compile Include="Regular\RegularExpressionType.cs" />
+    <Compile Include="Regular\StringLiteralExpression.cs" />
     <Compile Include="Regular\SymbolExpression.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Compiler.Public.snk" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Compiler.Common\Compiler.Common.csproj">
       <Project>{7f520e68-17a7-41db-bf53-3daec9e00e85}</Project>
       <Name>Compiler.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Compiler.Public.snk">
+      <Link>Compiler.Public.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DFA\" />
+    <Folder Include="NFA\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

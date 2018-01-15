@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Compiler.Common
+namespace Compiler
 {
     static class CodeContract
     {
