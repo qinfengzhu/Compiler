@@ -13,6 +13,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compiler.Common.Test", "Com
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compiler.Scanner.Test", "Compiler.Scanner.Test\Compiler.Scanner.Test.csproj", "{5BFA2B0B-391C-45EB-997D-D84BCC54C5A9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Articles", "Articles", "{51D7D557-E070-495D-B32D-77C1FED7E0B9}"
+	ProjectSection(SolutionItems) = preProject
+		DFA-的理解.md = DFA-的理解.md
+		NFA-的理解.md = NFA-的理解.md
+		RuleExpression-的理解.md = RuleExpression-的理解.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{11F389F9-FE80-4239-B2DC-C73C20AE63B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +51,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D55DF3D2-A5D2-4DA2-A603-0EAF3313477D} = {FFF623B9-55D4-4F41-9B78-9AA6868C2F7E}
 		{5BFA2B0B-391C-45EB-997D-D84BCC54C5A9} = {FFF623B9-55D4-4F41-9B78-9AA6868C2F7E}
+		{11F389F9-FE80-4239-B2DC-C73C20AE63B2} = {51D7D557-E070-495D-B32D-77C1FED7E0B9}
 	EndGlobalSection
 EndGlobal

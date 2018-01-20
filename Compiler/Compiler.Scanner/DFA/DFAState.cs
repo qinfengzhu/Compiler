@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Compiler.Scanner.Common;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Compiler.Scanner.DFA

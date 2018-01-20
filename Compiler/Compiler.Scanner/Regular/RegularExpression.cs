@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Compiler.Scanner.Common;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -71,6 +72,10 @@ namespace Compiler.Scanner.Regular
         public static RegularExpression Empty()
         {
             return EmptyExpression.Instance;
+        }
+        public RegularExpression Many1()
+        {
+            return this.Concat(this.Many());
         }
         public RegularExpression Optional()
         {

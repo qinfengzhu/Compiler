@@ -33,7 +33,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\Key\Compiler.Public.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>keyPair.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>true</DelaySign>
@@ -49,13 +49,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Compiler.Common\CodeContract.cs">
-      <Link>CodeContract.cs</Link>
-    </Compile>
+    <Compile Include="Common\CacheQueue.cs" />
+    <Compile Include="Common\CodeContract.cs" />
+    <Compile Include="Common\CompilationError.cs" />
+    <Compile Include="Common\CompilationErrorInfo.cs" />
+    <Compile Include="Common\CompilationErrorInfoCollection.cs" />
+    <Compile Include="Common\CompilationErrorList.cs" />
+    <Compile Include="Common\CompilationErrorManager.cs" />
+    <Compile Include="Common\CompilationStage.cs" />
+    <Compile Include="Common\RevertPoint.cs" />
+    <Compile Include="Common\RevertPointCollection.cs" />
+    <Compile Include="Scan\ForkableScanner.cs" />
+    <Compile Include="Scan\ForkableScannerBuilder.cs" />
+    <Compile Include="Scan\ForkableScannerCore.cs" />
+    <Compile Include="Scan\ScannerException.cs" />
+    <Compile Include="Common\SourceReader.cs" />
+    <Compile Include="Common\StringBuilderReader.cs" />
     <Compile Include="DFA\DFAEdge.cs" />
     <Compile Include="DFA\DFAModel.cs" />
     <Compile Include="DFA\DFAState.cs" />
     <Compile Include="CompactCharSetManager.cs" />
+    <Compile Include="Lex\CompressedTransitionTable.cs" />
+    <Compile Include="Lex\Lexeme.cs" />
+    <Compile Include="Lex\LexemeRange.cs" />
+    <Compile Include="Lex\LexemeValue.cs" />
+    <Compile Include="Lex\Lexer.cs" />
+    <Compile Include="Lex\Lexicon.cs" />
+    <Compile Include="Scan\ScannerInfo.cs" />
+    <Compile Include="Scan\SerializableScannerInfo.cs" />
+    <Compile Include="Common\SourceLocation.cs" />
+    <Compile Include="Common\SourceSpan.cs" />
+    <Compile Include="Lex\Token.cs" />
+    <Compile Include="Lex\TokenInfo.cs" />
     <Compile Include="NFA\NFAConverter.cs" />
     <Compile Include="NFA\NFAEdge.cs" />
     <Compile Include="NFA\NFAModel.cs" />
@@ -71,6 +96,10 @@
     <Compile Include="Regular\RegularExpressionType.cs" />
     <Compile Include="Regular\StringLiteralExpression.cs" />
     <Compile Include="Regular\SymbolExpression.cs" />
+    <Compile Include="Scan\FiniteAutomationEngine.cs" />
+    <Compile Include="Scan\HistoryList.cs" />
+    <Compile Include="Scan\Scanner.cs" />
+    <Compile Include="UnitTestVisibility.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Compiler.Common\Compiler.Common.csproj">
@@ -82,6 +111,7 @@
     <None Include="Compiler.Public.snk">
       <Link>Compiler.Public.snk</Link>
     </None>
+    <None Include="keyPair.snk" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
